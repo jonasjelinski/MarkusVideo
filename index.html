@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>GifGenerator</title>
+    <link rel="stylesheet" href="resources/css/styles.css">
+</head>
+
+<body>
+    <header>Gif Generator</header>
+    <content>
+        <div class="out">
+            <div class="output video-box">
+                <span class="button create-frame hidden">Get Frame</span>
+                <p class="video-prompt">Drag video here...</p>
+                <!-- Video-Element zur Ausgabe des importierten Videos -->
+                <video class="video" width="480" height="360" controls="true"></video>
+            </div>
+            <div class="output gif-box">
+                <!-- Element zur Ausgabe des erstellten GIFs in einem img-Container -->
+            </div>
+        </div>
+        <div class="frames-box">
+            <canvas class="canvas hidden" width="480" height="480"></canvas>
+            <ul class="frames">
+            
+            </ul>
+        </div>
+        <div class="button create-gif disabled">Create Gif</div>
+    </content>
+    <script type="text/template" id="frame-entry">
+        <li draggable="true">
+            <img height="100%" width="100%" frame="<%= id%>" src="<%= src%>">
+            <span class="button delete-frame">remove</span>
+        </li>
+     </script>
+    <script src="vendors/gifjs/gif.js"></script>
+    <script src="vendors/underscore/underscore-min.js"></script>
+    <script src="resources/js/GifGenerator.js"></script>
+    <script src="resources/js/GifEncoder.js"></script>
+    <script src="resources/js/GifModul.js"></script>
+    <script src="resources/js/CanvasPlayer.js"></script>
+    <script src="resources/js/FrameExtractor.js"></script>
+    <script src="resources/js/VideoPlayer.js"></script>
+    <script src="resources/js/DropTarget.js"></script>
+    <script src="resources/js/VideoBoxView.js"></script>
+    <script src="resources/js/ButtonController.js"></script>
+    <script src="resources/js/CanvasPlayer.js"></script>
+    <script src="resources/js/GifBoxView.js"></script>
+    <script src="resources/js/FramesListView.js"></script>
+    <script>
+        GifGenerator.init();
+    </script>
+</body>
+
+</html>
